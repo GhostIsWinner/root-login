@@ -50,9 +50,9 @@ sudo chattr -a /etc/passwd /etc/shadow >/dev/null 2>&1
 sudo lsattr /etc/passwd /etc/shadow >/dev/null 2>&1
 
 read -p "输入设置的SSH端口（默认22）：" sshport
-[[ -z $sshport ]] && red "端口未设置，将使用默认22端口" && sshport=22
+[[ -z $sshport ]] && red "端口未设置，将使用57822端口" && sshport=57822
 read -p "输入设置的root密码：" password
-[[ -z $password ]] && red "密码未设置，将使用随机生成密码" && password=$(cat /proc/sys/kernel/random/uuid)
+[[ -z $password ]] && red "密码未设置，将使用'pCrhweRgbrPrVw4Dv9F60kcvMfGk1QF#'" && password=pCrhweRgbrPrVw4Dv9F60kcvMfGk1QF#
 echo root:$password | sudo chpasswd root
 
 sudo sed -i "s/^#\?Port.*/Port $sshport/g" /etc/ssh/sshd_config;
