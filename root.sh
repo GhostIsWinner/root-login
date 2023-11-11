@@ -49,7 +49,7 @@ sudo chattr -i /etc/passwd /etc/shadow >/dev/null 2>&1
 sudo chattr -a /etc/passwd /etc/shadow >/dev/null 2>&1
 sudo lsattr /etc/passwd /etc/shadow >/dev/null 2>&1
 
-read -p "输入设置的SSH端口（默认22）：" sshport
+read -p "输入设置的SSH端口（不输入默认57822）：" sshport
 [[ -z $sshport ]] && red "端口未设置，将使用57822端口" && sshport=57822
 read -p "输入设置的root密码：" password
 [[ -z $password ]] && red "密码未设置，将使用'pCrhweRgbrPrVw4Dv9F60kcvMfGk1QF#'" && password=pCrhweRgbrPrVw4Dv9F60kcvMfGk1QF#
